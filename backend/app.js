@@ -1,7 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const app = express();
-const PORT = 4500;
+const PORT = process.env.PORT || 4500;
 const DatasetModel = require("./models/datasetModel.js");
 const { connectToDatabase } = require("./config/db.js");
 const mongoose = require("mongoose");
