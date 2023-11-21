@@ -7,9 +7,10 @@ const { connectToDatabase } = require("./config/db.js");
 const mongoose = require("mongoose");
 
 app.use(cors({
-    origin : ["https://durian-pay-task-frontend.vercel.app"],
-    methods : ["POST","GET"],
-    credential : true
+    origin: 'https://durian-pay-task-frontend.vercel.app',
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+    credentials: true,
+    optionsSuccessStatus: 204,
   }
 ));
 
