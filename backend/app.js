@@ -37,6 +37,23 @@ const extractMaxPrice = (priceString) => {
   return 0;
 };
 
+// CORS middleware and Preflight CORS handler
+app.use((req, res, next) => {
+  // Set headers first to allow requests from any origin
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+  res.setHeader('Access-Control-Allow-Credentials', true);
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, PATCH, OPTIONS, DELETE');
+
+  // Preflight CORS handler
+  if (req.method === 'OPTIONS') {
+    return res.status(200).end(); // Send an empty response
+  }
+
+  // Call next() to move to the next middleware or route handler
+  next();
+});
+
 app.post("/api/search", async (req, res) => {
   const { searchTerm, filter, numberOfResults, comparisonList } = req.body;
 
