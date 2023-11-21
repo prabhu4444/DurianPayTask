@@ -21,7 +21,7 @@ function SearchForm() {
 
     e.preventDefault();
     // Updated apiUrl to match the backend URL
-    const apiUrl = 'http://localhost:4500/api/search';
+    const apiUrl = 'durian-pay-task.vercel.app/api/search';
 
     const searchData = {
       searchTerm,
