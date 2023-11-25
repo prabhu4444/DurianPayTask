@@ -8,6 +8,7 @@ const mongoose = require("mongoose");
 
 //app.use(cors());
 app.use(cors({"origin": "https://durian-pay-task-frontend.vercel.app"));
+app.options("*",cors());
 
 //These lines of code were used once only to enter the data into the db.
 /*
