@@ -6,7 +6,8 @@ const DatasetModel = require("./models/datasetModel.js");
 const { connectToDatabase } = require("./config/db.js");
 const mongoose = require("mongoose");
 
-app.use(cors());
+//app.use(cors());
+app.use(cors({"origin": "https://durian-pay-task-frontend.vercel.app"));
 
 //These lines of code were used once only to enter the data into the db.
 /*
